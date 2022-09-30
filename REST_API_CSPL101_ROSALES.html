@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSPL101 REST API Rosales, Christian</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1> <center> BORED? NOT ANYMORE! </center></h1>
+    <p><center>Bored API, Rosales, Christian Paul R.</center></p>
+    <!--<h2 class = "math"></h2>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" style="background-color:lavender;">
+                <center><h2 class = "activity"></center></h2>
+              <div class="row">
+                <div class="col-sm-6" style="background-color:pink;"><center><h3 class = "type"></h3></center></div>
+                <div class="col-sm-6" style="background-color:lightcyan;"><center><h3 class = "participants"></center></h3></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <script>
+        axios.get("https://www.boredapi.com/api/activity")
+            .then(response => {
+                bored = response.data
+                console.log(bored)
+                document.querySelector(".activity").innerHTML = "Activity: " + bored.activity
+                document.querySelector(".type").innerHTML = "Type: " + bored.type
+                document.querySelector(".participants").innerHTML = "Participants: " + bored.participants
+            })
+    </script>
+</body>
+</html>
